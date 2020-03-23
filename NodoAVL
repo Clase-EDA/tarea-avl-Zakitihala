@@ -1,0 +1,57 @@
+package binarytreeavl;
+
+/**
+ *
+ * @author Andres Rodrigo Navarrete López 182125
+ */
+public class NodoAVL {
+    
+    public NodoAVL derecha,izquierda;
+    public int altura;
+    public Comparable elem;
+    public NodoAVL padre;
+    
+    public NodoAVL(Comparable elem){
+        this.elem=elem;
+    }
+    
+    public NodoAVL(Comparable elem, NodoAVL izquierda, NodoAVL derecha){
+        this.elem=elem;
+        this.derecha=derecha;
+        this.izquierda=izquierda;
+        altura=0;
+    }
+
+    public NodoAVL getDerecha() {
+        return derecha;
+    }
+
+    public NodoAVL getIzquierda() {
+        return izquierda;
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public Comparable getElem() {
+        return elem;
+    }
+
+    public NodoAVL getPadre() {
+        return padre;
+    }
+    
+    
+    public void setAltura(int altura){
+        this.altura=altura;
+    }
+    
+    public void setPadre(NodoAVL padre){
+        this.padre=padre;
+    }
+    
+    public void cuelga(NodoAVL anterior){
+        this.padre.setPadre(anterior.getPadre());
+    }
+}
